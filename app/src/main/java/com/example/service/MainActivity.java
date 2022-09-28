@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         //stopService(mServiceIntent);
         Intent broadcastIntent = new Intent();
-        broadcastIntent.setAction("restartservice");
+        broadcastIntent.setAction(Constant.RESTART_SERVICE);
         broadcastIntent.setClass(this, RestartBroadcastReceiver.class);
         this.sendBroadcast(broadcastIntent);
         super.onDestroy();
