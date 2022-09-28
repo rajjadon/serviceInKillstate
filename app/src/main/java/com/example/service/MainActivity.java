@@ -10,16 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Intent mServiceIntent;
-    private FroGroundService mYourService;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mYourService = new FroGroundService();
-        mServiceIntent = new Intent(this, mYourService.getClass());
+        FroGroundService mYourService = new FroGroundService();
+        Intent mServiceIntent = new Intent(this, mYourService.getClass());
         if (!isMyServiceRunning(mYourService.getClass())) {
             startService(mServiceIntent);
         }
